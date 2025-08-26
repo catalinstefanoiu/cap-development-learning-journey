@@ -4,7 +4,7 @@ using {
      cuid,
      managed,
      Currency,
-     // Country,
+     Country,
      sap.common.CodeList
      } from '@sap/cds/common';
 
@@ -13,7 +13,8 @@ entity Books : cuid, managed { // Inherit from cuid
         title       : localized String(255);
         author      : Association to Authors;
         genre       : Genre;
-        publCountry : String(3); // Change to Country if you want to use the full entity
+        // publCountry : String(3); // Change to Country if you want to use the full entity
+        publCountry : Country;
         stock       : NoOfBooks;
         price       : Price;
         isHardcover : Boolean;
