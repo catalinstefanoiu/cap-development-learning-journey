@@ -3,10 +3,27 @@
   "version": "1.0.0",
   "description": "A simple CAP project",
   "dependencies": {
-    "@sap/cds": "^7",
+    "@sap/cds": "^9.2.1",
+    "@cap-js/hana":"^2",
     "express": "^4"
   },
   "scripts": {
     "start": "cds-serve"
+  },
+  "devDependencies": {
+    "@cap-js/sqlite": "^2.0.2"
+  },
+  "cds": {
+    "requires": {
+      "db": {
+        "[development]": {
+          "kind": "sqlite",
+          "credentials": {
+            "url": ":memory:"
+          }
+        }
+      }
+    }
   }
+
 }
